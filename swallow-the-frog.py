@@ -4,18 +4,7 @@ import os
 
 '''
 The following script incorporates several important productivity concepts:
-
-Swallowing the Frog: This is a concept popularized by Brian Tracy in his book "Eat That Frog!" The "frog" is the most challenging task of your day—the one you are most likely to procrastinate on, but also the one that can have the greatest positive impact on your life.
-
-Prioritizing: Prioritizing involves determining the order in which you will handle tasks based on their importance and urgency.
-
-Working on the Most Important Thing: This is the concept of focusing your efforts on the tasks that make the most significant difference.
-
-Experiential Avoidance: This is a concept from psychology that refers to a person's attempt to avoid thoughts, feelings, memories, physical sensations, and other internal experiences—even when doing so creates harm in the long-run.
-
-Accepting Discomfort: This is about understanding that discomfort is a natural part of life and work, and that avoiding it can actually hinder progress and growth.
-
-Not Getting Sidetracked by the Easy Task: This is about resisting the temptation to do easier, less important tasks instead of focusing on the more challenging, critical ones.
+...
 '''
 
 # Get the current date
@@ -27,8 +16,11 @@ dir_path = "/Users/jay/dropbox/roam/accountability/"
 # Create a new file with the current date in the filename
 file_path = f"{dir_path}tasks-{date}.org"
 
-# Ask for tasks, one per line
-print("Please enter your tasks for today, one per line. Press RETURN twice to finish.")
+# Step 1: Define Your Daily Goals and Tasks
+print("\nStep 1: Define Your Daily Goals and Tasks")
+print("- Brainstorm a list of everything you need to do.")
+print("- Make sure each item is actionable and specific.")
+print("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
 tasks = []
 while True:
     # Read a line of input from the user
@@ -40,50 +32,50 @@ while True:
         # If the line is empty (the user pressed RETURN), break out of the loop
         break
 
-# Ask for the most important tasks
+# Step 2: Identify the Most Important Task
+print("\nStep 2: Identify the Most Important Tasks")
+print("\nWhich tasks are the MOST IMPORTANT ONES? Use the arrow keys to move, SPACE to select, and RETURN to finish.")
 questions = [
     {
-        'type': 'checkbox',  # Checkbox allows multiple selection
-        'message': 'Which tasks are the MOST IMPORTANT ONES? Use the arrow keys to move, SPACE to select, and RETURN to finish.',
-        'name': 'frogs',  # Name of the field to save the answers
-        'choices': [{'name': task} for task in tasks]  # Choices are the tasks entered by the user
+        'type': 'checkbox',
+        'message': 'Select your most important tasks (frogs)',
+        'name': 'frogs',
+        'choices': [{'name': task} for task in tasks]
     }
 ]
-
-# Display the prompt and get the answers from the user
 answers = prompt(questions)
-# Extract the list of most important tasks (frogs) from the answers
 frogs = answers['frogs']
 
-# Ask for the ranking of the frogs
+# Step 3: Work on the Most Important Task First
+print("\nStep 3: Find the frog")
+print("- Review your list of tasks and ask yourself: If I could only accomplish ONE task today, which one would have the greatest positive impact on my life or work?")
+print("- Label this task as your 'frog' for the day. This is the task you'll focus on first.")
+print("\nrank your most important tasks in order of priority. Hit RETURN to select.")
 ranking = []
 for i in range(len(frogs)):
     questions = [
         {
-            'type': 'list',  # List allows single selection
-            'message': f'Which is your #{i+1} MOST IMPORTANT TASK today? Hit RETURN to select.',
-            'name': 'rank',  # Name of the field to save the answer
-            'choices': [{'name': frog} for frog in frogs if frog not in ranking]  # Choices are the frogs not yet ranked
+            'type': 'list',
+            'message': f'Which is your #{i+1} MOST IMPORTANT TASK today?',
+            'name': 'rank',
+            'choices': [{'name': frog} for frog in frogs if frog not in ranking]
         }
     ]
-    # Display the prompt and get the answer from the user
     answer = prompt(questions)
-    # Add the selected frog to the ranking list
     ranking.append(answer['rank'])
 
 # Write tasks to file
 with open(file_path, "w") as f:
-    # Write the task count to the file
     f.write(f"** Tasks for today [0/{len(tasks)}]\n")
-    # Write the frogs to the file, in ranked order
     for i, rank in enumerate(ranking, start=1):
         f.write(f"*** TODO [#A] Frog #{i}: {rank}\n")
-    # Write the remaining tasks to the file
     for task in tasks:
         if task not in ranking:
             f.write(f"*** TODO {task}\n")
 
 # Display the file using bat
+print("- Start your workday by focusing on your 'frog'. Resist the temptation to start with easier, less important tasks.")
+print("- If the task is large or complex, break it down into smaller, manageable parts and start with the first part.")
 os.system(f'bat {file_path}')
 
 # Copy the output to the clipboard
