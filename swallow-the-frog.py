@@ -57,10 +57,8 @@ with open(file_path, "w") as f:
         if task not in ranking:
             f.write(f"*** TODO {task}\n")
 
-# Display the file
-with open(file_path, "r") as f:
-    output = f.read()
-    print(output)
+# Display the file using bat
+os.system(f'bat {file_path}')
 
 # Copy the output to the clipboard
-os.system(f'echo "{output}" | pbcopy')
+os.system(f'cat {file_path} | pbcopy')
