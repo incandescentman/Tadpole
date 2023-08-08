@@ -34,17 +34,18 @@ answers = prompt(questions)
 frogs = answers['frogs']
 
 # Ask for the ranking of the frogs
-questions = [
-    {
-        'type': 'list',
-        'message': 'Please rank your important tasks. Use arrow keys to move and return to submit.',
-        'name': 'ranking',
-        'choices': [{'name': frog} for frog in frogs]
-    }
-]
-
-answers = prompt(questions)
-ranking = answers['ranking']
+ranking = []
+for i in range(len(frogs)):
+    questions = [
+        {
+            'type': 'list',
+            'message': f'Which is the #{i+1} most important task?',
+            'name': 'rank',
+            'choices': [{'name': frog} for frog in frogs if frog not in ranking]
+        }
+    ]
+    answer = prompt(questions)
+    ranking.append(answer['rank'])
 
 # Write tasks to file
 with open(file_path, "w") as f:
