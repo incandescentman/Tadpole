@@ -1,12 +1,12 @@
-* Tadpole: A Swallow the Frog Style Task Prioritization Script
+* Tadpole: A task prioritization tool in the style of Swallow the Frog
 This Python script is designed to help you plan your day by identifying and prioritizing your most important tasks, which are referred to as "frogs".
 
 ** How It Works
 The script prompts you to list all of your tasks for the day. Then, it asks you to identify your most important tasks. These are your "frogs". It then prompts you to rank your "frogs" in order of priority. The tasks are then written to a .org file in your specified directory, with your "frogs" highlighted.
 
-[[/Users/jay/Dropbox/apps/swallow-the-frog/2.png]]
+[[2.png]]
 
-[[/Users/jay/Dropbox/apps/swallow-the-frog/1.png]]
+[[1.png]]
 
 ** Concepts
 Swallowing the Frog is a concept popularized by Brian Tracy in his book Eat That Frog! The "frog" is your most challenging task of your day---the one you are most likely to procrastinate on, but also the one that can have the greatest positive impact on your life.
