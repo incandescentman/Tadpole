@@ -1,5 +1,5 @@
+from PyInquirer import prompt
 import datetime
-import inquirer
 
 # Get the current date
 date = datetime.date.today()
@@ -22,12 +22,29 @@ while True:
 
 # Ask for the most important tasks
 questions = [
-    inquirer.Checkbox('frogs',
-                      message="Which tasks are the most important ones? Use arrow keys to move, space to select, and return to submit.",
-                      choices=tasks,
-                      ),
+    {
+        'type': 'checkbox',
+        'message': 'Which tasks are the most important ones? Use arrow keys to move, RETURN to select.',
+        'name': 'frogs',
+        'choices': [{'name': task} for task in tasks]
+    }
 ]
-frogs = inquirer.prompt(questions)
+
+answers = prompt(questions)
+frogs = answers['frogs']
+
+# Ask for the ranking of the frogs
+questions = [
+    {
+        'type': 'list',
+        'message': 'Please rank your important tasks. Use arrow keys to move and return to submit.',
+        'name': 'ranking',
+        'choices': [{'name': frog} for frog in frogs]
+    }
+]
+
+answers = prompt(questions)
+ranking = answers['ranking']
 
 # Write tasks to file
 with open(file_path, "w") as f:
@@ -37,8 +54,8 @@ with open(file_path, "w") as f:
 
     # Write the 'frogs' to file
     f.write("* Frogs for today\n")
-    for frog in frogs['frogs']:
-        f.write(f"  - [ ] {frog}\n")
+    for rank in ranking:
+        f.write(f"  - [ ] {rank}\n")
 
 # Display the file
 with open(file_path, "r") as f:
