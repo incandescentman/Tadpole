@@ -7,6 +7,8 @@ The script prompts you to list all of your tasks for the day. Then, it asks you 
 ** Concepts
 Swallowing the Frog is a concept popularized by Brian Tracy in his book "Eat That Frog!" The "frog" is the most challenging task of your day---the one you are most likely to procrastinate on, but also the one that can have the greatest positive impact on your life.
 
+https://www.youtube.com/watch?v=1oyCXhiwulk
+
 The script incorporates several productivity concepts:
 
 - Swallowing the Frog: Starting your day by focusing on the most challenging task that can have the greatest positive impact on your day.
