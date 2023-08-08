@@ -1,5 +1,6 @@
 from PyInquirer import prompt
 import datetime
+import os
 
 # Get the current date
 date = datetime.date.today()
@@ -58,4 +59,8 @@ with open(file_path, "w") as f:
 
 # Display the file
 with open(file_path, "r") as f:
-    print(f.read())
+    output = f.read()
+    print(output)
+
+# Copy the output to the clipboard
+os.system(f'echo "{output}" | pbcopy')
