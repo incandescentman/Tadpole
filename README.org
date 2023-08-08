@@ -48,6 +48,6 @@ The script incorporates several productivity concepts:
 ** Development
 https://chat.openai.com/share/512550f7-cb92-4dff-a46b-a8ebb550d6da
 
-[[https://github.com/incandescentman/tadpole/raw/main/ unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png][file: unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png][file:unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png]]
 
-[[https://github.com/incandescentman/tadpole/raw/main/ unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png][file: unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png][file:unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png]]
