@@ -18,9 +18,7 @@ while True:
     if task:
         tasks.append(task)
     else:
-        more = input("Do you have any more tasks? (y/n) ")
-        if more.lower() != "y":
-            break
+        break
 
 # Ask for the most important tasks
 questions = [
@@ -31,15 +29,6 @@ questions = [
 ]
 frogs = inquirer.prompt(questions)
 
-# Ask for the ranking of the frogs
-questions = [
-    inquirer.List('ranking',
-                  message="Please rank your important tasks. Use arrow keys to move and return to submit.",
-                  choices=frogs['frogs'],
-                  ),
-]
-ranking = inquirer.prompt(questions)
-
 # Write tasks to file
 with open(file_path, "w") as f:
     f.write(f"* Tasks for today [{len(tasks)}/0]\n")
@@ -48,15 +37,8 @@ with open(file_path, "w") as f:
 
     # Write the 'frogs' to file
     f.write("* Frogs for today\n")
-    for rank in ranking['ranking']:
-        f.write(f"  - [ ] {rank}\n")
-
-    # Ask for any notes
-    notes = input("Do you have any notes for today? ")
-
-    # Write notes to file
-    f.write("* Notes\n")
-    f.write(notes + "\n")
+    for frog in frogs['frogs']:
+        f.write(f"  - [ ] {frog}\n")
 
 # Display the file
 with open(file_path, "r") as f:
