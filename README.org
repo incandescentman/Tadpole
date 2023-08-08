@@ -4,9 +4,9 @@ This Python script is designed to help you plan your day by identifying and prio
 ** How It Works
 The script prompts you to list all of your tasks for the day. Then, it asks you to identify your most important tasks. These are your "frogs". It then prompts you to rank your "frogs" in order of priority. The tasks are then written to a .org file in your specified directory, with your "frogs" highlighted.
 
-[[2.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/2.png][file:2.png]]
 
-[[1.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/1.png][file:1.png]]
 
 ** Concepts
 Swallowing the Frog is a concept popularized by Brian Tracy in his book Eat That Frog! The "frog" is your most challenging task of your day---the one you are most likely to procrastinate on, but also the one that can have the greatest positive impact on your life.
