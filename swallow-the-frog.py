@@ -25,7 +25,7 @@ while True:
 questions = [
     {
         'type': 'checkbox',
-        'message': 'Which tasks are the most important ones? Use arrow keys to move, RETURN to select.',
+        'message': 'Which tasks are the MOST IMPORTANT ONES? Use the arrow keys to move, SPACE to select, and RETURN to finish.',
         'name': 'frogs',
         'choices': [{'name': task} for task in tasks]
     }
@@ -40,7 +40,7 @@ for i in range(len(frogs)):
     questions = [
         {
             'type': 'list',
-            'message': f'Which is the #{i+1} most important task?',
+            'message': f'Which is your #{i+1} MOST IMPORTANT TASK today? Hit RETURN to select.',
             'name': 'rank',
             'choices': [{'name': frog} for frog in frogs if frog not in ranking]
         }
