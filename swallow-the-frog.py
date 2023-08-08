@@ -18,6 +18,9 @@ Experiential Avoidance: This is a concept from psychology that refers to a perso
 Accepting Discomfort: This is about understanding that discomfort is a natural part of life and work, and that avoiding it can actually hinder progress and growth.
 
 Not Getting Sidetracked by the Easy Task: This is about resisting the temptation to do easier, less important tasks instead of focusing on the more challenging, critical ones.
+
+Development:
+https://chat.openai.com/share/512550f7-cb92-4dff-a46b-a8ebb550d6da
 '''
 
 
