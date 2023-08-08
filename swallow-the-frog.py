@@ -2,6 +2,22 @@ from PyInquirer import prompt
 import datetime
 import os
 
+'''
+The following script incorporates several important productivity concepts:
+
+Swallowing the Frog: This is a concept popularized by Brian Tracy in his book "Eat That Frog!" The "frog" is the most challenging task of your day—the one you are most likely to procrastinate on, but also the one that can have the greatest positive impact on your life.
+
+Prioritizing: Prioritizing involves determining the order in which you will handle tasks based on their importance and urgency.
+
+Working on the Most Important Thing: This is the concept of focusing your efforts on the tasks that make the most significant difference.
+
+Experiential Avoidance: This is a concept from psychology that refers to a person's attempt to avoid thoughts, feelings, memories, physical sensations, and other internal experiences—even when doing so creates harm in the long-run.
+
+Accepting Discomfort: This is about understanding that discomfort is a natural part of life and work, and that avoiding it can actually hinder progress and growth.
+
+Not Getting Sidetracked by the Easy Task: This is about resisting the temptation to do easier, less important tasks instead of focusing on the more challenging, critical ones.
+'''
+
 # Get the current date
 date = datetime.date.today()
 
