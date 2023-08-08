@@ -49,14 +49,12 @@ for i in range(len(frogs)):
 
 # Write tasks to file
 with open(file_path, "w") as f:
-    f.write(f"* Tasks for today [{len(tasks)}/0]\n")
-    for i, task in enumerate(tasks, start=1):
-        f.write(f"  - [ ] {task}\n")
-
-    # Write the 'frogs' to file
-    f.write("* Frogs for today\n")
-    for rank in ranking:
-        f.write(f"  - [ ] {rank}\n")
+    f.write(f"** Tasks for today [0/{len(tasks)}]\n")
+    for i, rank in enumerate(ranking, start=1):
+        f.write(f"*** TODO [#A] Frog #{i}: {rank}\n")
+    for task in tasks:
+        if task not in ranking:
+            f.write(f"*** TODO {task}\n")
 
 # Display the file
 with open(file_path, "r") as f:
