@@ -1,4 +1,6 @@
 * Tadpole: A task prioritization tool
+[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_swallow_the_frog._color_illustration_2a22e586-52c8-4059-939b-aa7ee1ee7eb6.png][file:unreliablenarrator_swallow_the_frog._color_illustration_2a22e586-52c8-4059-939b-aa7ee1ee7eb6.png]]
+
 Inspired by the practice of "swallowing the frog," this Python script is designed to help you plan your day by identifying and prioritizing your most important tasks --- that is, your "frogs."
 
 ** How It Works
