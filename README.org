@@ -1,5 +1,5 @@
 * Tadpole: A task prioritization tool
-[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_swallow_the_frog._color_illustration_2a22e586-52c8-4059-939b-aa7ee1ee7eb6.png][file:unreliablenarrator_swallow_the_frog._color_illustration_2a22e586-52c8-4059-939b-aa7ee1ee7eb6.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__7e86e2c5-c332-47a9-9af1-be5d1e454747.png][file:unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__7e86e2c5-c332-47a9-9af1-be5d1e454747.png]]
 
 Inspired by the practice of "swallowing the frog," this Python script is designed to help you plan your day by identifying and prioritizing your most important tasks --- that is, your "frogs."
 
@@ -48,3 +48,6 @@ The script incorporates several productivity concepts:
 ** Development
 https://chat.openai.com/share/512550f7-cb92-4dff-a46b-a8ebb550d6da
 
+[[https://github.com/incandescentman/tadpole/raw/main/ unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png][file: unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png]]
+
+[[https://github.com/incandescentman/tadpole/raw/main/ unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png][file: unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png]]
