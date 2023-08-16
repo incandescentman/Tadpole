@@ -4,25 +4,27 @@
 Inspired by the practice of "swallowing the frog," this Python script is designed to help you plan your day by identifying and prioritizing your most important tasks --- that is, your "frogs." 🐸
 
 ** How It Works
-The script prompts you to list all of your tasks for the day. Then, it asks you to identify your most important tasks. These are your "frogs". It then prompts you to rank your "frogs" in order of priority. The tasks are then written to a text file in your specified directory in org-mode format, with your frogs highlighted.
+The script prompts you to list all of your tasks for the day. Then, it asks you to identify your most important tasks. These are your "frogs".
+
+The script then prompts you to rank your "frogs" in order of priority. The tasks are then written to a text file in your specified directory in org-mode format, with your frogs highlighted.
 
 [[https://github.com/incandescentman/tadpole/raw/main/images/2.png][file:images/2.png]]
 
 [[https://github.com/incandescentman/tadpole/raw/main/images/1.png][file:images/1.png]]
 
 ** Concepts
-Swallowing the Frog is a concept popularized by Brian Tracy in his book Eat That Frog! The "frog" is your most challenging task of your day---the one you are most likely to procrastinate on, but also the one that can have the greatest positive impact on your life.
+Swallowing the Frog is a concept popularized by author Brian Tracy in his wonderful book [[https://www.amazon.com/Eat-That-Frog-Great-Procrastinating-ebook/dp/B09YH72KMK/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1692216802&sr=8-1][Eat That Frog]]! The "frog" is your most challenging task of your day---the one you're most likely to procrastinate, and the one that, if you get it out of the way first thing and just get it done, will have the greatest positive impact.
 
 https://www.youtube.com/watch?v=1oyCXhiwulk
 
 The script incorporates several productivity concepts:
 
-- Swallowing the Frog: Starting your day by focusing on the most challenging task that can have the greatest positive impact on your day.
-- Prioritizing: determining the order of tasks based on their importance and urgency.
-- Avoiding Experiential Avoidance: This is a concept from psychology that refers to a person's attempt to avoid thoughts, feelings, memories, physical sensations, and other internal experiences---even when doing so creates harm in the long-run.
-- Working on the Most Important Thing: Directing your energy and time towards the tasks that align with your goals and add the most value.
-- Accepting Discomfort: Understanding that discomfort is a natural part of life and work, and facing it can lead to accomplishing significant tasks and goals.
-- Not Getting Sidetracked by the Easy Task: Resisting the temptation to do easier, less important tasks ("bikeshedding") instead of focusing on the more challenging, critical ones.
+- *Swallowing the Frog:* Starting your day by focusing on the most challenging task that can have the greatest positive impact on your day.
+- *Prioritizing:* Determining the order of tasks based on their importance and urgency.
+- *Reversing Experiential Avoidance:* This is a concept from psychology that refers to a person's attempt to avoid thoughts, feelings, memories, physical sensations, and other internal experiences---even when doing so creates harm in the long-run.
+- *Working on the Most Important Thing First:* Directing your energy and time towards the tasks that align with your goals and add the most value.
+- *Accepting Discomfort:* Understanding that discomfort is a natural part of life and work, and facing it can lead to accomplishing significant tasks and goals.
+- *Not Getting Sidetracked by the Easy Task:* Resisting the temptation to do easier, less important tasks ("bikeshedding") instead of focusing on the more challenging, critical ones.
 
 ** Requirements
 - Python 3
