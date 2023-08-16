@@ -45,10 +45,10 @@ def print_wrapped(text, width=70):
 
 # Step 1: Define Your Daily Goals and Tasks
 
-print(colored("\nStep 1: Define Your Daily Goals and Tasks", 'white'))
-print("- Brainstorm a list of everything you need to do.")
-print("- Make sure each item is actionable and specific.")
-print("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
+print_wrapped(colored("\nStep 1: Define Your Daily Goals and Tasks", 'white'))
+print_wrapped("- Brainstorm a list of everything you need to do.")
+print_wrapped("- Make sure each item is actionable and specific.")
+print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
 tasks = []
 while True:
     # Read a line of input from the user
@@ -61,8 +61,8 @@ while True:
         break
 
 # Step 2: Identify the Most Important Task
-print(colored("\nStep 2: Identify the Most Important Tasks", 'white'))
-print("\nWhich tasks are the MOST IMPORTANT ONES? Use the arrow keys to move, SPACE to select, and RETURN to finish.")
+print_wrapped(colored("\nStep 2: Identify the Most Important Tasks", 'white'))
+print_wrapped("\nWhich tasks are the MOST IMPORTANT ONES? Use the arrow keys to move, SPACE to select, and RETURN to finish.")
 questions = [
     {
         'type': 'checkbox',
@@ -75,11 +75,11 @@ answers = prompt(questions)
 frogs = answers['frogs']
 
 # Step 3: Work on the Most Important Task First
-print(colored("\nStep 3: Find the frog", 'white'))
-print("- Review your list of tasks and ask yourself: If I could only accomplish ONE task today, which one would have the greatest positive impact on my life or work?")
-print("- This task is your frog for the day --- the task you'll focus on first because it's the most important and probably also the most intimidating.")
-print("- By swallowing the frog first thing and staying on task until it's done, you'll strengthen your ability to accept discomfort.")
-print("\nRank your most important tasks in order of priority. Hit RETURN to select.")
+print_wrapped(colored("\nStep 3: Find the frog", 'white'))
+print_wrapped("- Review your list of tasks and ask yourself: If I could only accomplish ONE task today, which one would have the greatest positive impact on my life or work?")
+print_wrapped("- This task is your frog for the day --- the task you'll focus on first because it's the most important and probably also the most intimidating.")
+print_wrapped("- By swallowing the frog first thing and staying on task until it's done, you'll strengthen your ability to accept discomfort.")
+print_wrapped("\nRank your most important tasks in order of priority. Hit RETURN to select.")
 ranking = []
 for i in range(len(frogs)):
     questions = [
@@ -104,8 +104,8 @@ with open(file_path, "w") as f:
             f.write(f"*** TODO {task}\n")
 
 # Step 4: Define Low-Priority Tasks
-print(colored("\nStep 4: Define Low-Priority Tasks for Today", 'white'))
-print("Please enter your low-priority tasks for today, one per line. These are tasks that you done't necessarily have to do. You're listening them here as a form of CAPTURE, to get them out of your head so you can stop worrying about trying to remember them. You don't have to do these tasks today, but the point is that you've defined them as LOW-PRIORITY, so don't work on them until you've finished your high-priority tasks. Think of them as a DO NOT DO list --- at least while you're being productive on your other tasks. Press RETURN twice to finish.")
+print_wrapped(colored("\nStep 4: Define Low-Priority Tasks for Today", 'white'))
+print_wrapped("Please enter your low-priority tasks for today, one per line. These are tasks that you done't necessarily have to do. You're listening them here as a form of CAPTURE, to get them out of your head so you can stop worrying about trying to remember them. You don't have to do these tasks today, but the point is that you've defined them as LOW-PRIORITY, so don't work on them until you've finished your high-priority tasks. Think of them as a DO NOT DO list --- at least while you're being productive on your other tasks. Press RETURN twice to finish.")
 low_priority_tasks = []
 while True:
     task = input()
@@ -123,8 +123,8 @@ with open(file_path, "a") as f:
 
 
 # Display the file using bat
-print("- Start your workday by focusing on your 'frog'. Resist the temptation to start with easier, less important tasks.")
-print("- If the task is large, complex, or otherwise daunting, break it down into smaller, manageable steps and start with the first step.")
+print_wrapped("- Start your workday by focusing on your 'frog'. Resist the temptation to start with easier, less important tasks.")
+print_wrapped("- If the task is large, complex, or otherwise daunting, break it down into smaller, manageable steps and start with the first step.")
 os.system(f'bat {file_path}')
 
 # Copy the output to the clipboard
