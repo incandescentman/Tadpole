@@ -2,7 +2,7 @@ from PyInquirer import prompt
 import datetime
 import os
 from termcolor import colored
-
+import textwrap
 
 '''
 The following script incorporates several important productivity concepts:
@@ -36,6 +36,12 @@ dir_path = "/Users/jay/dropbox/roam/accountability/"
 
 # Create a new file with the current date in the filename
 file_path = f"{dir_path}tasks-{date}.org"
+
+# Use textwrap to limit the width of the text output:
+def print_wrapped(text, width=70):
+    # Wrap the text within the specified width
+    wrapped_text = textwrap.fill(text, width=width)
+    print(wrapped_text)
 
 # Step 1: Define Your Daily Goals and Tasks
 
@@ -110,7 +116,7 @@ while True:
 
 # Append low-priority tasks to the file
 with open(file_path, "a") as f:
-    f.write("** Low-Priority Tasks (Save These for LATER!!)\n")
+    f.write("\n** Low-Priority Tasks (Save These for LATER!!)\n")
     for task in low_priority_tasks:
         f.write(f"*** TODO {task}\n")
 
