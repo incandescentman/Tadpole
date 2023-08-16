@@ -98,7 +98,7 @@ for i in range(len(frogs)):
 with open(file_path, "w") as f:
     f.write(f"** High-Priority Tasks for Today [0/{len(tasks)}]\n")
     for i, rank in enumerate(ranking, start=1):
-        f.write(f"*** TODO [#A] Frog #{i}: {rank}\n")
+        f.write(f"*** TODO [#A] 🐸 FROG #{i}: {rank}\n")
     for task in tasks:
         if task not in ranking:
             f.write(f"*** TODO {task}\n")
