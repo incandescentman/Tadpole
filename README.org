@@ -1,14 +1,14 @@
 * Tadpole: A task prioritization tool
-[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__7e86e2c5-c332-47a9-9af1-be5d1e454747.png][file:unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__7e86e2c5-c332-47a9-9af1-be5d1e454747.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/images/unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__7e86e2c5-c332-47a9-9af1-be5d1e454747.png][file:unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__7e86e2c5-c332-47a9-9af1-be5d1e454747.png]]
 
 Inspired by the practice of "swallowing the frog," this Python script is designed to help you plan your day by identifying and prioritizing your most important tasks --- that is, your "frogs." 🐸
 
 ** How It Works
 The script prompts you to list all of your tasks for the day. Then, it asks you to identify your most important tasks. These are your "frogs". It then prompts you to rank your "frogs" in order of priority. The tasks are then written to a text file in your specified directory in org-mode format, with your frogs highlighted.
 
-[[https://github.com/incandescentman/tadpole/raw/main/2.png][file:2.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/images/2.png][file:2.png]]
 
-[[https://github.com/incandescentman/tadpole/raw/main/1.png][file:1.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/images/1.png][file:1.png]]
 
 ** Concepts
 Swallowing the Frog is a concept popularized by Brian Tracy in his book Eat That Frog! The "frog" is your most challenging task of your day---the one you are most likely to procrastinate on, but also the one that can have the greatest positive impact on your life.
@@ -48,6 +48,6 @@ The script incorporates several productivity concepts:
 ** Development
 https://chat.openai.com/share/512550f7-cb92-4dff-a46b-a8ebb550d6da
 
-[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png][file:unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/images/unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png][file:unreliablenarrator_an_adorable_tree_frog_checking_off_items_on_4319f0f6-6df2-451e-a782-c50420e2a38e.png]]
 
-[[https://github.com/incandescentman/tadpole/raw/main/unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png][file:unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png]]
+[[https://github.com/incandescentman/tadpole/raw/main/images/unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png][file:unreliablenarrator_an_adorable_tree_frog_working_at_a_writing__baaf0e89-cbdc-419d-80b1-7b215be12d4d.png]]
