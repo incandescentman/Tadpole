@@ -87,7 +87,8 @@ for i in range(len(frogs)):
     answer = prompt(questions)
     ranking.append(answer['rank'])
 
-# Write tasks to file
+
+# Write high-priority tasks to file
 with open(file_path, "w") as f:
     f.write(f"** High-Priority Tasks for Today [0/{len(tasks)}]\n")
     for i, rank in enumerate(ranking, start=1):
@@ -95,6 +96,25 @@ with open(file_path, "w") as f:
     for task in tasks:
         if task not in ranking:
             f.write(f"*** TODO {task}\n")
+
+# Step 4: Define Low-Priority Tasks
+print(colored("\nStep 4: Define Low-Priority Tasks for Today", 'white'))
+print("Please enter your low-priority tasks for today, one per line. These are tasks that you done't necessarily have to do. You're listening them here as a form of CAPTURE, to get them out of your head so you can stop worrying about trying to remember them. You don't have to do these tasks today, but the point is that you've defined them as LOW-PRIORITY, so don't work on them until you've finished your high-priority tasks. Think of them as a DO NOT DO list --- at least while you're being productive on your other tasks. Press RETURN twice to finish.")
+low_priority_tasks = []
+while True:
+    task = input()
+    if task:
+        low_priority_tasks.append(task)
+    else:
+        break
+
+# Append low-priority tasks to the file
+with open(file_path, "a") as f:
+    f.write("** Low-Priority Tasks (Save These for LATER!!)\n")
+    for task in low_priority_tasks:
+        f.write(f"*** TODO {task}\n")
+
+
 
 # Display the file using bat
 print("- Start your workday by focusing on your 'frog'. Resist the temptation to start with easier, less important tasks.")
