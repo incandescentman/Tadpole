@@ -70,16 +70,21 @@ print_wrapped("- Make sure each item is actionable and specific.")
 # Read the clipboard content
 clipboard_content = pyperclip.paste().strip()
 
+
 # Check if the clipboard starts with a hyphen and a space
 if clipboard_content.startswith("- "):
-    print_wrapped(colored(f"\nThe clipboard contains the following task list:\n{clipboard_content}", 'white'))
+    print(colored("\nThe clipboard contains the following task list:", 'white'))
+    # Print each line to preserve line breaks
+    for line in clipboard_content.split("\n"):
+        print(colored(line, 'white'))
+
     print("Do you want to use this as your input? [Y/n]: ", end='', flush=True)
 
     # Get a single character input for confirmation
     confirm = get_ch()
 
     print()  # Print a newline for better formatting
-    if confirm.lower() in ["", "y"]:
+    if confirm.lower() in ["", "y", "\r", "\n"]:
         tasks = clipboard_content.split("\n")
         tasks = [clean_task(task) for task in tasks]
     else:
@@ -92,6 +97,8 @@ if clipboard_content.startswith("- "):
                 tasks.append(cleaned_task)
             else:
                 break
+
+
 else:
     print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
     tasks = []
