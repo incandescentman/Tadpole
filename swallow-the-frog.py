@@ -27,16 +27,14 @@ import sys
 import tty
 import termios
 
-
 # Function to clean tasks (remove leading hyphens)
 def clean_task(task):
     """Remove leading hyphen from the task description if present."""
     return task.lstrip('- ').strip()
 
-
-# Single character input
+# Function to get a single character input
 def get_ch():
-    """Get a single character input, works on Unix/Linux"""
+    """Get a single character input, works on Unix/Linux."""
     fd = sys.stdin.fileno()
     old_settings = termios.tcgetattr(fd)
     try:
@@ -46,10 +44,8 @@ def get_ch():
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
     return ch
 
-
 # Clear the terminal screen
 os.system('clear')  # For Unix/Linux
-# os.system('cls')  # For Windows
 
 # Get the current date
 date = datetime.date.today()
@@ -60,39 +56,39 @@ dir_path = "/Users/jay/dropbox/roam/accountability/"
 # Create a new file with the current date in the filename
 file_path = f"{dir_path}tasks-{date}.org"
 
-# Use textwrap to limit the width of the text output:
+# Use textwrap to limit the width of the text output
 def print_wrapped(text, width=70):
-    # Wrap the text within the specified width
+    """Wrap the text within the specified width."""
     wrapped_text = textwrap.fill(text, width=width)
     print(wrapped_text)
-
-import pyperclip  # Import the pyperclip library
-
-# ... (rest of your imports and setup code)
 
 # Step 1: Define Your Daily Goals and Tasks
 print_wrapped(colored("\nStep 1: Define Your Daily Goals and Tasks", 'white'))
 print_wrapped("- Brainstorm a list of everything you need to do.")
 print_wrapped("- Make sure each item is actionable and specific.")
 
-clipboard_content = pyperclip.paste().strip()  # Read the clipboard content
+# Read the clipboard content
+clipboard_content = pyperclip.paste().strip()
 
 # Check if the clipboard starts with a hyphen and a space
 if clipboard_content.startswith("- "):
-    print_wrapped(f"\nThe clipboard contains the following task list:\n{clipboard_content}")
-    print("Do you want to use this as your input? [Y/n]: ", end="", flush=True)
+    print_wrapped(colored(f"\nThe clipboard contains the following task list:\n{clipboard_content}", 'white'))
+    print("Do you want to use this as your input? [Y/n]: ", end='', flush=True)
+
+    # Get a single character input for confirmation
     confirm = get_ch()
+
     print()  # Print a newline for better formatting
     if confirm.lower() in ["", "y"]:
         tasks = clipboard_content.split("\n")
-        tasks = [clean_task(task) for task in tasks]  # Clean tasks from clipboard
+        tasks = [clean_task(task) for task in tasks]
     else:
         print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
         tasks = []
         while True:
             task = input()
             if task:
-                cleaned_task = clean_task(task)  # Remove leading hyphen if present
+                cleaned_task = clean_task(task)
                 tasks.append(cleaned_task)
             else:
                 break
@@ -102,7 +98,7 @@ else:
     while True:
         task = input()
         if task:
-            cleaned_task = clean_task(task)  # Remove leading hyphen if present
+            cleaned_task = clean_task(task)
             tasks.append(cleaned_task)
         else:
             break
