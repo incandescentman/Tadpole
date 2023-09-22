@@ -22,6 +22,7 @@ import datetime
 import os
 from termcolor import colored
 import textwrap
+import pyperclip
 
 # Function to clean tasks (remove leading hyphens)
 def clean_task(task):
@@ -48,8 +49,13 @@ def print_wrapped(text, width=70):
     wrapped_text = textwrap.fill(text, width=width)
     print(wrapped_text)
 
-# Step 1: Define Your Daily Goals and Tasks
 
+
+
+
+
+
+# Step 1: Define Your Daily Goals and Tasks
 print_wrapped(colored("\nStep 1: Define Your Daily Goals and Tasks", 'white'))
 print_wrapped("- Brainstorm a list of everything you need to do.")
 print_wrapped("- Make sure each item is actionable and specific.")
@@ -67,6 +73,7 @@ while True:
     else:
         # If the line is empty (the user pressed RETURN), break out of the loop
         break
+
 
 
 
