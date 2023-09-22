@@ -23,11 +23,28 @@ import os
 from termcolor import colored
 import textwrap
 import pyperclip
+import sys
+import tty
+import termios
+
 
 # Function to clean tasks (remove leading hyphens)
 def clean_task(task):
     """Remove leading hyphen from the task description if present."""
     return task.lstrip('- ').strip()
+
+
+# Single character input
+def get_ch():
+    """Get a single character input, works on Unix/Linux"""
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(fd)
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
 
 
 # Clear the terminal screen
@@ -49,8 +66,6 @@ def print_wrapped(text, width=70):
     wrapped_text = textwrap.fill(text, width=width)
     print(wrapped_text)
 
-
-
 import pyperclip  # Import the pyperclip library
 
 # ... (rest of your imports and setup code)
@@ -61,16 +76,26 @@ print_wrapped("- Brainstorm a list of everything you need to do.")
 print_wrapped("- Make sure each item is actionable and specific.")
 
 clipboard_content = pyperclip.paste().strip()  # Read the clipboard content
-use_clipboard = False
 
 # Check if the clipboard starts with a hyphen and a space
 if clipboard_content.startswith("- "):
-    print_wrapped("\nThe clipboard contains a task list that starts with '- '. Do you want to use this as your input? (y/n)")
-    answer = input().strip().lower()
-    if answer == 'y':
-        use_clipboard = True
+    print_wrapped(f"\nThe clipboard contains the following task list:\n{clipboard_content}")
+    print("Do you want to use this as your input? [Y/n]: ", end="", flush=True)
+    confirm = get_ch()
+    print()  # Print a newline for better formatting
+    if confirm.lower() in ["", "y"]:
         tasks = clipboard_content.split("\n")
         tasks = [clean_task(task) for task in tasks]  # Clean tasks from clipboard
+    else:
+        print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
+        tasks = []
+        while True:
+            task = input()
+            if task:
+                cleaned_task = clean_task(task)  # Remove leading hyphen if present
+                tasks.append(cleaned_task)
+            else:
+                break
 else:
     print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
     tasks = []
@@ -81,7 +106,6 @@ else:
             tasks.append(cleaned_task)
         else:
             break
-
 
 # Step 2: Identify the Most Important Task
 print_wrapped(colored("\nStep 2: Identify the Most Important Tasks", 'white'))
