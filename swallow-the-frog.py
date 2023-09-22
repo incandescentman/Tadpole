@@ -51,30 +51,36 @@ def print_wrapped(text, width=70):
 
 
 
+import pyperclip  # Import the pyperclip library
 
-
-
+# ... (rest of your imports and setup code)
 
 # Step 1: Define Your Daily Goals and Tasks
 print_wrapped(colored("\nStep 1: Define Your Daily Goals and Tasks", 'white'))
 print_wrapped("- Brainstorm a list of everything you need to do.")
 print_wrapped("- Make sure each item is actionable and specific.")
-print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
 
+clipboard_content = pyperclip.paste().strip()  # Read the clipboard content
+use_clipboard = False
 
-tasks = []
-while True:
-    # Read a line of input from the user
-    task = input()
-    if task:
-        # Remove leading hyphen if present
-        cleaned_task = clean_task(task)
-        tasks.append(cleaned_task)
-    else:
-        # If the line is empty (the user pressed RETURN), break out of the loop
-        break
-
-
+# Check if the clipboard starts with a hyphen and a space
+if clipboard_content.startswith("- "):
+    print_wrapped("\nThe clipboard contains a task list that starts with '- '. Do you want to use this as your input? (y/n)")
+    answer = input().strip().lower()
+    if answer == 'y':
+        use_clipboard = True
+        tasks = clipboard_content.split("\n")
+        tasks = [clean_task(task) for task in tasks]  # Clean tasks from clipboard
+else:
+    print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
+    tasks = []
+    while True:
+        task = input()
+        if task:
+            cleaned_task = clean_task(task)  # Remove leading hyphen if present
+            tasks.append(cleaned_task)
+        else:
+            break
 
 
 # Step 2: Identify the Most Important Task
