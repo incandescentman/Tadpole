@@ -1,9 +1,3 @@
-from PyInquirer import prompt
-import datetime
-import os
-from termcolor import colored
-import textwrap
-
 '''
 The following script incorporates several important productivity concepts:
 
@@ -23,6 +17,11 @@ Development:
 https://chat.openai.com/share/512550f7-cb92-4dff-a46b-a8ebb550d6da
 '''
 
+from PyInquirer import prompt
+import datetime
+import os
+from termcolor import colored
+import textwrap
 
 # Clear the terminal screen
 os.system('clear')  # For Unix/Linux
@@ -118,7 +117,7 @@ while True:
 with open(file_path, "a") as f:
     f.write("\n** Low-Priority Tasks (Save These for LATER!!)\n")
     for task in low_priority_tasks:
-        f.write(f"*** TODO {task}\n")
+        f.write(f"*** TODO 🕘 {task}\n")
 
 
 
