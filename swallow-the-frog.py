@@ -23,6 +23,12 @@ import os
 from termcolor import colored
 import textwrap
 
+# Function to clean tasks (remove leading hyphens)
+def clean_task(task):
+    """Remove leading hyphen from the task description if present."""
+    return task.lstrip('- ').strip()
+
+
 # Clear the terminal screen
 os.system('clear')  # For Unix/Linux
 # os.system('cls')  # For Windows
@@ -48,16 +54,21 @@ print_wrapped(colored("\nStep 1: Define Your Daily Goals and Tasks", 'white'))
 print_wrapped("- Brainstorm a list of everything you need to do.")
 print_wrapped("- Make sure each item is actionable and specific.")
 print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
+
+
 tasks = []
 while True:
     # Read a line of input from the user
     task = input()
     if task:
-        # If the line is not empty, add it to the tasks list
-        tasks.append(task)
+        # Remove leading hyphen if present
+        cleaned_task = clean_task(task)
+        tasks.append(cleaned_task)
     else:
         # If the line is empty (the user pressed RETURN), break out of the loop
         break
+
+
 
 # Step 2: Identify the Most Important Task
 print_wrapped(colored("\nStep 2: Identify the Most Important Tasks", 'white'))
