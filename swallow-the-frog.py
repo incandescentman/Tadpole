@@ -160,10 +160,20 @@ today_date = datetime.datetime.now().strftime("%Y-%m-%d")
 with open(file_path, "w") as f:
     f.write(f"** Dailies for {today_date}\n*** High-Priority Tasks [0/{len(tasks)}]\n")
     for i, rank in enumerate(ranking, start=1):
-        f.write(f"**** TODO [#A] 🐸 FROG #{i}: {rank}\n")
+        if rank.startswith('subtask: '):  # Check for subtasks
+            rank = rank.replace('subtask: ', '')  # Remove 'subtask: ' prefix
+            f.write(f"***** TODO [#A] 🐸 FROG #{i}: {rank}\n")  # Add extra asterisk
+        else:
+            f.write(f"**** TODO [#A] 🐸 FROG #{i}: {rank}\n")
+
     for task in tasks:
         if task not in ranking:
-            f.write(f"**** TODO {task}\n")
+            if task.startswith('subtask: '):  # Check for subtasks
+                task = task.replace('subtask: ', '')  # Remove 'subtask: ' prefix
+                f.write(f"***** TODO {task}\n")  # Add extra asterisk
+            else:
+                f.write(f"**** TODO {task}\n")
+
 
 # Step 4: Define Low-Priority Tasks
 print_wrapped(colored("\nStep 4: Define Low-Priority Tasks for Today", 'white'))
@@ -176,11 +186,16 @@ while True:
     else:
         break
 
+
 # Append low-priority tasks to the file
 with open(file_path, "a") as f:
     f.write("\n*** Low-Priority Tasks (Save These for LATER!!)\n")
     for task in low_priority_tasks:
-        f.write(f"**** TODO 🕘 {task}\n")
+        if task.startswith('subtask: '):  # Check for subtasks
+            task = task.replace('subtask: ', '')  # Remove 'subtask: ' prefix
+            f.write(f"***** TODO 🕘 {task}\n")  # Add extra asterisk
+        else:
+            f.write(f"**** TODO 🕘 {task}\n")
 
 
 
