@@ -27,10 +27,17 @@ import sys
 import tty
 import termios
 
-# Function to clean tasks (remove leading hyphens)
+# Function to clean tasks (remove leading hyphens and optionally mark as subtask)
 def clean_task(task):
-    """Remove leading hyphen from the task description if present."""
-    return task.lstrip('- ').strip()
+    """Remove leading hyphen or plus sign from the task description if present.
+    Mark as subtask if it starts with a plus sign.
+    """
+    is_subtask = task.strip().startswith('+')  # Check if task is a subtask
+    cleaned_task = task.lstrip('-+ ').strip()  # Remove leading hyphens and plus signs
+    if is_subtask:
+        cleaned_task = f"subtask: {cleaned_task}"  # Mark it as a subtask
+    return cleaned_task
+
 
 # Function to get a single character input
 def get_ch():
@@ -84,6 +91,7 @@ if clipboard_content.startswith("- "):
     confirm = get_ch()
 
     print()  # Print a newline for better formatting
+    # This is for when clipboard is used
     if confirm.lower() in ["", "y", "\r", "\n"]:
         tasks = clipboard_content.split("\n")
         tasks = [clean_task(task) for task in tasks]
@@ -99,6 +107,7 @@ if clipboard_content.startswith("- "):
                 break
 
 
+# This is for when tasks are manually entered
 else:
     print_wrapped("\nPlease enter your tasks for today, one per line. Press RETURN twice to finish.")
     tasks = []
