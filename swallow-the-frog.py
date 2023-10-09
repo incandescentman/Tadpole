@@ -15,6 +15,9 @@ Not Getting Sidetracked by the Easy Task: This is about resisting the temptation
 
 Development:
 https://chat.openai.com/share/512550f7-cb92-4dff-a46b-a8ebb550d6da
+
+2023-10-09:
+https://chat.openai.com/share/e2de705a-03a3-4423-8c19-28cc3f261e23
 '''
 
 from PyInquirer import prompt
